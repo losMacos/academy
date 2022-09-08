@@ -427,12 +427,24 @@ experience.
 
 ![im.something.of.a.scientist.myself.jpeg](/assets/lessons/2/img_9.jpeg)
 
-## JSON
+## Media for our NFTs
 
 We have most of our smart contract ready, so we are going to focus on the media
 that we want on our NFTs.
 
-Marketplaces uses the standard to display info for our NFTs, and that means we
+We propose a "Choose your own adventure" for this part of the project:
+
+- If you want to go quickly into deploying the contract, you can use the images
+and files that we prepared, and move on to the next section.
+
+- If you want to create your own images and have an NFT of your own, you'll have
+to take the winding road and learn a little about the standard used to identify NFTs
+and a solution to store files in a decentralized way.
+
+<ContentSideDrawer title="Longer Path (learn about JSON and IPFS)">
+## JSON
+
+Marketplaces uses the JSON standard to display info for our NFTs, and that means we
 have to create a file with our NFT information (name, description, image and
 attributes), and that file will point to our media.
 
@@ -546,8 +558,11 @@ when you publish an image in imgur or any other web2, only ours is
 decentralized). However, we feel that getting your feet wet and interacting with
 an IPFS service will surely help you get ahead in your learning.
 
-Have your json files folder IPFS link saved (the full link, that links to all
-the files), for we will use it in our next step.
+Make note or save the link to the IPFS folder with your json files (the full link,
+that links to the folder with all the files), for we will use it in our next step.
+
+</ContentSideDrawer>
+
 
 ## Deploy! (back to Solidity, kind of)
 
@@ -582,8 +597,9 @@ const CONTRACT_NAME = 'ProjectNFT'
 // The 3 parameters for our smart contract's constructor (CHANGE THIS!!!)
 const NFT_NAME = 'SoC'
 const NFT_DESCRIPTION = 'D_D Academy Basic NFT Collection'
-const NFT_BASE_URI =
-  'https://gateway.pinata.cloud/ipfs/QmVugFDxagshJ4wCGYhGocCMURCfgsyJW7APNCPnS6nx7S/'
+
+// Change this if you created your own images/JSONs:
+const NFT_BASE_URI = 'https://gateway.pinata.cloud/ipfs/QmVugFDxagshJ4wCGYhGocCMURCfgsyJW7APNCPnS6nx7S/'
 
 // We define a function with all we want Hardhat to run
 async function main() {
